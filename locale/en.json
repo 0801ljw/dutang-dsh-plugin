@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Dutang · Council workbench",
+    "description": "Embed the Dutang three-department workbench in a DSH sidebar panel, with six tools for listing, reading, submitting and reviewing local cases. Requires a reachable fusion-server upstream and a Dutang API token in DUTANG_TOKEN; submissions follow DSH approval.",
+    "detail": "docs/DETAIL.md"
+  }
+}

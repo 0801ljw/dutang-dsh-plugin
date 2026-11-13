@@ -1,0 +1,7 @@
+# 都堂 bundle patch：插入一个 Host/Client 双半插件行。
+- insert:
+    - id: dutang
+      name: '@dutang/dsh-plugin-dutang'
+      config:
+        upstream: http://127.0.0.1:18793
+        submitApproval: true

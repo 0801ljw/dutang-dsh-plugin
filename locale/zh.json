@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "都堂 · 三省六部执行台",
+    "description": "在 DSH 侧栏内嵌都堂看板，并提供列出/读取/呈交/审阅本地案卷的 6 个工具。需要可达的 fusion-server 上游，以及 DUTANG_TOKEN 中的都堂验符；呈案默认经过 DSH 审批。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}

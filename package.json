@@ -1,0 +1,59 @@
+{
+  "name": "@dutang/dsh-plugin-dutang",
+  "version": "0.4.0",
+  "private": false,
+  "description": "都堂 · 三省六部可信执行台：在 DSH Web 侧栏内嵌看板，提供 6 个都堂工具，并通过 /dutang 同源代理连接 fusion-server。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.1-rc.2+": "compatible",
+        "0.2.2-rc.1+": "compatible"
+      }
+    }
+  },
+  "files": [
+    "lib",
+    "locale",
+    "docs",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "author": "ljw",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "dutang",
+    "fusion",
+    "workbench",
+    "approval"
+  ],
+  "icon": "icon.svg"
+}
