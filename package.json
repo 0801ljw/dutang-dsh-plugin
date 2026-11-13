@@ -55,5 +55,13 @@
     "workbench",
     "approval"
   ],
-  "icon": "icon.svg"
+  "icon": "icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0801ljw/dutang-dsh-plugin.git"
+  },
+  "homepage": "https://github.com/0801ljw/dutang-dsh-plugin",
+  "bugs": {
+    "url": "https://github.com/0801ljw/dutang-dsh-plugin/issues"
+  }
 }
