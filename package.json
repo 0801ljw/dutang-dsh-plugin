@@ -1,6 +1,6 @@
 {
   "name": "@dutang/dsh-plugin-dutang",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": false,
   "description": "都堂 · 三省六部可信执行台：在 DSH Web 侧栏内嵌看板，提供 6 个都堂工具，并通过 /dutang 同源代理连接 fusion-server。",
   "type": "module",
@@ -63,5 +63,8 @@
   "homepage": "https://github.com/0801ljw/dutang-dsh-plugin",
   "bugs": {
     "url": "https://github.com/0801ljw/dutang-dsh-plugin/issues"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.19.0"
   }
 }
