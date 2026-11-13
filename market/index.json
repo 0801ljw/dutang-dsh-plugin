@@ -77,12 +77,12 @@
       },
       "versions": [
         {
-          "version": "0.4.0",
-          "publishTimestamp": 1794555907,
+          "version": "0.4.1",
+          "publishTimestamp": 1794556513,
           "source": {
             "type": "git",
             "url": "https://github.com/0801ljw/dutang-dsh-plugin.git",
-            "commit": "64782389c34e3bc4f0986973067f47350c1a94a1"
+            "commit": "ea9049778319f15c165b36bae6a16cbb29fc2405"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.5 <0.3.0"

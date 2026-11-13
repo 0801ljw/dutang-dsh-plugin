@@ -7,7 +7,7 @@
 - **同源代理**：`/dutang/*` 代理到 fusion-server，不改 DSH CSP，也不把上游端口暴露给浏览器
 - **安全**：`/dutang` 复用 DSH 浏览器会话鉴权（未登录 401）；呈案默认经 DSH approval；不提供董事会签名工具
 
-当前版本 **0.4.0**（DSH bundle）。
+当前版本 **0.4.1**（DSH bundle）。
 
 ## 前置条件
 
