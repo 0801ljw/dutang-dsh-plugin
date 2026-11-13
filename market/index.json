@@ -1,0 +1,94 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Dutang plugins",
+    "zh": "都堂插件"
+  },
+  "description": {
+    "en": "Plugins for the Dutang three-department workbench.",
+    "zh": "都堂 · 三省六部可信执行台的 DSH 插件。"
+  },
+  "metadata": {
+    "categories": {
+      "workbench": {
+        "title": {
+          "en": "Workbench",
+          "zh": "工作台"
+        }
+      }
+    },
+    "labels": {
+      "local-first": {
+        "title": {
+          "en": "Local first",
+          "zh": "本地优先"
+        }
+      },
+      "approval": {
+        "title": {
+          "en": "Approval gated",
+          "zh": "审批门控"
+        }
+      }
+    },
+    "sortKeys": {
+      "updated": {
+        "title": {
+          "en": "Updated",
+          "zh": "更新时间"
+        },
+        "order": "desc"
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "@dutang/dsh-plugin-dutang",
+      "title": {
+        "en": "Dutang · Council workbench",
+        "zh": "都堂 · 三省六部执行台"
+      },
+      "description": {
+        "en": "Embed the Dutang workbench in a DSH panel and give agents six tools to list, read, submit and review local cases. Requires a reachable fusion-server upstream and a Dutang API token in DUTANG_TOKEN. Submissions follow DSH approval.",
+        "zh": "在 DSH 侧栏内嵌都堂看板，并提供列出/读取/呈交/审阅本地案卷的 6 个工具。需要可达的 fusion-server 上游，以及 DUTANG_TOKEN 中的都堂验符；呈案默认经过 DSH 审批。"
+      },
+      "icon": "icon.svg",
+      "author": "ljw",
+      "homepage": "https://github.com/0801ljw/dutang-dsh-plugin",
+      "repository": {
+        "url": "https://github.com/0801ljw/dutang-dsh-plugin"
+      },
+      "metadata": {
+        "category": "workbench",
+        "keywords": [
+          "dutang",
+          "fusion",
+          "workbench",
+          "approval",
+          "local-first"
+        ],
+        "labels": [
+          "local-first",
+          "approval"
+        ],
+        "sortKeys": {
+          "updated": 1794555907
+        }
+      },
+      "versions": [
+        {
+          "version": "0.4.0",
+          "publishTimestamp": 1794555907,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/0801ljw/dutang-dsh-plugin.git",
+            "commit": "64782389c34e3bc4f0986973067f47350c1a94a1"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.5 <0.3.0"
+          }
+        }
+      ]
+    }
+  ]
+}
