@@ -89,7 +89,7 @@ PY
 ## 面板
 
 - `/dutang/`、`/dutang/health` 都经过 DSH 会话鉴权；代理转发前剥离 DSH cookie。
-- `autoAuth` 开启时，插件在面板 HTML 里注入一个同源脚本 `/dutang/~bootstrap.js`，把配置的 token 设为 iframe 的 `window.name`（`fusion_session:<token>`），都堂前端启动时读取它并自动连接。
+- `autoAuth` 开启时，插件在面板 HTML 的 `</body>` 前注入同源脚本 `/dutang/~bootstrap.js`；脚本在 `app.js` 之前执行，把配置的 token 写进 `#token` 输入框、设置 `fusion_auth=1` 提示，并保留旧版前端需要的 `window.name`，都堂面板因此自动连接。
 - 该 token 是**机器验符**，权限与 fusion 的 machine token 相同：读案卷/功过簿/成物 + 呈案入队；**不含** agent 安装、模型 Key、用户管理等 admin 接口。
 - 切换 DSH 面板时 iframe 会重载，父帧内存桥恢复选中案卷与滚动位置（不落盘）。
 - 健康状态点：面板右上角绿/红点对应 `/dutang/health`。
@@ -141,6 +141,7 @@ node scripts/check-tools.mjs     # 6 工具注册 + 审批/幂等/成物（需�
 - 验符以明文存于 DSH profile 配置（`cordis.patch.yml`）；生产多用户部署应改为 DSH credentials 或外部 secret manager。
 - 新实例（尚未 onboarding）在嵌入模式下，`onboarding.html` 的绝对资源路径可能跳出 `/dutang` 前缀；建议先在浏览器打开 fusion 完成 onboarding，或先不经 DSH 完成初始化。
 - 呈案只入队；实际执行需要 fusion 侧运行 worker 并配置模型通道，这不是本插件的能力。
+- `autoAuth` 下点「登出」只在当前页面生效；刷新面板会再次自动连接。要保留登出状态，把 `autoAuth` 设为 `false` 并手动登录。
 
 ## License
 

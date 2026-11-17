@@ -71,13 +71,15 @@ try {
 
   const panel = await call(prefix.handler, "/dutang/?embed=1");
   assert.equal(panel.status, 200);
-  assert.match(panel.body, /<script src="\/dutang\/~bootstrap\.js"><\/script>/);
-  assert.match(panel.body, /ok<\/body>/);
+  assert.match(panel.body, /<script src="\/dutang\/~bootstrap\.js"><\/script><\/body>/i);
+  assert.match(panel.body, /ok/);
 
   const bootstrap = await call(prefix.handler, "/dutang/~bootstrap.js");
   assert.equal(bootstrap.status, 200);
   assert.match(String(bootstrap.headers["content-type"]), /javascript/);
-  assert.match(bootstrap.body, /fusion_session:test-token/);
+  assert.match(bootstrap.body, /fusion_session:.*test-token/);
+  assert.match(bootstrap.body, /fusion_auth=1/);
+  assert.match(bootstrap.body, /getElementById\("token"\)/);
 
   assert.equal(Config({}).token, "");
   assert.equal(Config({}).autoAuth, true);
