@@ -72,17 +72,17 @@
           "approval"
         ],
         "sortKeys": {
-          "updated": 1794905418
+          "updated": 1794905613
         }
       },
       "versions": [
         {
           "version": "0.5.0",
-          "publishTimestamp": 1794905418,
+          "publishTimestamp": 1794905613,
           "source": {
             "type": "git",
             "url": "https://github.com/0801ljw/dutang-dsh-plugin.git",
-            "commit": "420fc9aba99bc0683dc7b400f2fece41f39b51db"
+            "commit": "13c15db8b99d80f7bf7955526a7adfc9c21755d7"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.5 <0.3.0"
