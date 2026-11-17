@@ -16,10 +16,10 @@
 
 1. DSH `>= 0.2.1-rc.5`（在 `0.2.2-rc.2` 上验证）
 2. 一个可达的 **都堂 fusion-server**
-   - 默认上游：`http://127.0.0.1:18793`
+   - 默认上游：`http://127.0.0.1:8893`
    - 本机开发通常通过 SSH 隧道把 ljw-pc 的 8793 映射过来：
      ```bash
-     ssh -N -L 18793:127.0.0.1:8793 ljw-pc
+     ssh -N -L 8893:127.0.0.1:8793 ljw-pc
      ```
 3. 都堂 API 验符，启动 DSH 前设置：
    ```bash
@@ -51,13 +51,13 @@ bundle patch 默认：
     - id: dutang
       name: '@dutang/dsh-plugin-dutang'
       config:
-        upstream: http://127.0.0.1:18793
+        upstream: http://127.0.0.1:8893
         submitApproval: true
 ```
 
 | 字段 | 默认 | 说明 |
 |---|---|---|
-| `upstream` | `http://127.0.0.1:18793` | 都堂 fusion-server 根地址；可在 **插件 → 已安装 → 都堂 → 配置** 修改 |
+| `upstream` | `http://127.0.0.1:8893` | 都堂 fusion-server 根地址；可在 **插件 → 已安装 → 都堂 → 配置** 修改 |
 | `submitApproval` | `true` | 呈案前是否经 DSH approval |
 | `DUTANG_TOKEN`（环境变量） | 无 | 都堂 API 验符；未设置时工具返回明确错误 |
 
