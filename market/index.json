@@ -49,8 +49,8 @@
         "zh": "都堂 · 三省六部执行台"
       },
       "description": {
-        "en": "Embed the Dutang workbench in a DSH panel and give agents six tools to list, read, submit and review local cases. Requires a reachable fusion-server upstream and a Dutang API token in DUTANG_TOKEN. Submissions follow DSH approval.",
-        "zh": "在 DSH 侧栏内嵌都堂看板，并提供列出/读取/呈交/审阅本地案卷的 6 个工具。需要可达的 fusion-server 上游，以及 DUTANG_TOKEN 中的都堂验符；呈案默认经过 DSH 审批。"
+        "en": "Embed the Dutang workbench in a DSH panel and give agents six tools to list, read, submit and review local cases. Requires a reachable fusion-server upstream and a Dutang API token in the plugin config (or DUTANG_TOKEN). With a token configured the panel signs in automatically.",
+        "zh": "在 DSH 侧栏内嵌都堂看板，并提供列出/读取/呈交/审阅本地案卷的 6 个工具。需要可达的 fusion-server 上游，以及插件配置中的都堂验符（或 DUTANG_TOKEN）；配置后看板自动登录。"
       },
       "icon": "icon.svg",
       "author": "ljw",
@@ -72,17 +72,17 @@
           "approval"
         ],
         "sortKeys": {
-          "updated": 1794555907
+          "updated": 1794905418
         }
       },
       "versions": [
         {
-          "version": "0.4.2",
-          "publishTimestamp": 1794890529,
+          "version": "0.5.0",
+          "publishTimestamp": 1794905418,
           "source": {
             "type": "git",
             "url": "https://github.com/0801ljw/dutang-dsh-plugin.git",
-            "commit": "fff78c99dc078eb6248580c9fb108568b50baaff"
+            "commit": "420fc9aba99bc0683dc7b400f2fece41f39b51db"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.5 <0.3.0"
