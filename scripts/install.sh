@@ -25,7 +25,7 @@ text += """
     - id: dutang
       name: '@dutang/dsh-plugin-dutang'
       config:
-        upstream: http://127.0.0.1:18793
+        upstream: auto
         token: !!js process.env.DUTANG_TOKEN
 """
 path.write_text(text)

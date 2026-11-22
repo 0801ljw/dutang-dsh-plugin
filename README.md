@@ -48,10 +48,12 @@
 ```bash
 git clone https://github.com/0801ljw/dutang-dsh-plugin.git
 cd dutang-dsh-plugin
-./scripts/install.sh web
+./scripts/install.sh desktop   # DSH Desktop
+# 或
+./scripts/install.sh web       # DSH Web
 ```
 
-或者：DSH Web → **Plugins → Add plugin** → 选择本地 `dutang-dsh-plugin` 目录。
+或者：DSH → **Plugins → Add plugin** → 选择本地 `dutang-dsh-plugin` 目录。
 
 DSH 插件市场也可以添加索引：
 
@@ -59,7 +61,7 @@ DSH 插件市场也可以添加索引：
 https://raw.githubusercontent.com/0801ljw/dutang-dsh-plugin/main/market/index.json
 ```
 
-安装后仍需配置一个可达的 fusion-server（桌面 App 可用 `upstream: auto`）。
+安装后默认 `upstream: auto`：优先读桌面 App discovery，找不到时回退到 `http://127.0.0.1:8893`。也可在插件配置里显式指定上游。
 
 ## 三步用起来
 
