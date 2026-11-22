@@ -3,12 +3,12 @@
 把「都堂 · 三省六部可信执行台」接进 DeepSeek Harness：
 
 - **侧栏面板**：内嵌都堂看板（`?embed=1` 紧凑模式，跟随 DSH 明暗主题）
-- **6 个模型工具**：列案卷、读案卷、呈案、读功过簿、列成物、读成物
+- **10 个模型工具**：列本机 Agent、列/建/评论 Issue、列案卷、读案卷、呈案、读功过簿、列成物、读成物
 - **同源代理**：`/dutang/*` 代理到 fusion-server，不改 DSH CSP，也不把上游端口暴露给浏览器
 - **配置即用**：验符来自插件配置（或 `DUTANG_TOKEN`）；配好后**面板自动登录**，无需手输
-- **安全**：`/dutang` 复用 DSH 浏览器会话鉴权（未登录 401）；呈案默认经 DSH approval；不提供董事会签名工具
+- **安全**：`/dutang` 复用 DSH 浏览器会话鉴权（未登录 401）；呈案默认经 DSH approval；不提供签批处签章工具
 
-当前版本 **0.5.0**（本地增强版；0.4.2 的公开版需要 `DUTANG_TOKEN`，且面板需手动登录）。
+当前版本 **0.5.5**（Issue 工具支持 checks；支持 `upstream: auto` 自动发现桌面 App 的 discovery）。
 
 ## 前置条件
 
@@ -19,6 +19,29 @@
    - 默认上游：`http://127.0.0.1:8893`（本机 Docker 常用；容器内 8793 → 宿主机 8893）
    - 远程实例可用 SSH 隧道：`ssh -N -L 8893:127.0.0.1:8793 ljw-pc`
 3. 都堂 API 验符（fusion `tokens.json` 中的一条记录）
+
+
+## 桌面 App 自动发现（0.5.1+）
+
+桌面 App 启动本地 fusion 后，会写：
+
+```text
+~/Library/Application Support/Hengjian/instance/discovery.json   (0600)
+```
+
+插件配置改为 `upstream: auto` 即可自动读取其中的随机端口与 token， **不再手填 token/隧道**：
+
+```yaml
+- id: dutang
+  name: "@dutang/dsh-plugin-dutang"
+  config:
+    upstream: auto
+    autoAuth: true
+```
+
+- 也可用 `discovery: /absolute/path` 指定其他 discovery 文件。
+- discovery 不可用时回退到 `upstream` 配置（默认 `http://127.0.0.1:8893`）和 `DUTANG_TOKEN`。
+- App 未运行时插件不会自动拉起 App；先打开桌面 App 或显式配置 upstream。
 
 ## 三步用起来
 
@@ -79,7 +102,8 @@ PY
 
 | 字段 | 默认 | 说明 |
 |---|---|---|
-| `upstream` | `http://127.0.0.1:8893` | fusion-server 根地址 |
+| `upstream` | `http://127.0.0.1:8893` | fusion-server 根地址；设为 `auto` 时读桌面 App discovery |
+| `discovery` | 空 | 显式 discovery 文件路径；空时用 `DUTANG_DISCOVERY` 或 macOS App 默认路径 |
 | `token` | 空 | 都堂 API 验符；空时工具返回明确错误，面板保持手动登录 |
 | `autoAuth` | `true` | 有 token 时把验符注入面板 iframe（`window.name`），面板自动登录；关掉则手动登录/输 token |
 | `submitApproval` | `true` | 呈案前是否经 DSH approval |
@@ -105,7 +129,7 @@ PY
 | `dutang_list_artifacts` | 列某次运行的成物文件 | 只读 |
 | `dutang_read_artifact` | 读可预览成物的文本（截断 20000 字） | 只读 |
 
-没有 `approve` 工具：董事会签名必须人持私钥在离线设备完成。
+没有 `approve` 工具：签批处签章必须人持私钥在离线设备完成。
 
 ## 安装
 

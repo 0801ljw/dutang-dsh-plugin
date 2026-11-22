@@ -1,8 +1,8 @@
 {
   "name": "@dutang/dsh-plugin-dutang",
-  "version": "0.5.0",
+  "version": "0.5.5",
   "private": false,
-  "description": "都堂 · 三省六部可信执行台：DSH 侧栏面板 + 6 个工具；配置 token 后面板自动登录，通过 /dutang 同源代理连接 fusion-server。",
+  "description": "都堂 · 三省六部可信执行台：DSH 侧栏面板 + 10 个工具；支持 upstream=auto 自动发现桌面 App 的 0600 discovery，也兼容显式 upstream/token。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
