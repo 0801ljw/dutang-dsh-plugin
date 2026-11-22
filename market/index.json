@@ -82,7 +82,7 @@
           "source": {
             "type": "git",
             "url": "https://github.com/0801ljw/dutang-dsh-plugin.git",
-            "commit": "a167b05efff11cf75c829d4449eeba0fa47a7aca"
+            "commit": "4de6c735907fa09bd1be8b8724c0aa379508c31c"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.5 <0.3.0"
